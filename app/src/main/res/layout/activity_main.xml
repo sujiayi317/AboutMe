@@ -36,6 +36,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/bio_text"
+                style="@style/NameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/bio" />
+
             <ImageView
                 android:id="@+id/bio_image"
                 android:layout_width="match_parent"
@@ -46,12 +54,12 @@
 
 
             <TextView
-                android:id="@+id/bio_text"
+                android:id="@+id/bio_text1"
                 style="@style/NameStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingMultiplier="1.2"
-                android:text="@string/bio" />
+                android:text="@string/bio1" />
 
         </LinearLayout>
     </ScrollView>
