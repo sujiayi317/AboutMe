@@ -12,10 +12,14 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val myName: MyName = MyName("Jiayi Su")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.myName = myName
 
         binding.doneButton.setOnClickListener {
             // it refers to the done_button, which is the view passed as the argument.
@@ -33,7 +37,13 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             // Set the text in the nicknameTextView text view to the text that the user entered in
             // the editText, getting it from the text property.
-            nicknameText.text = nicknameEdit.text
+//            nicknameText.text = nicknameEdit.text.toString()
+            // Set the nickname in the myName variable.
+            myName?.nickname = nicknameEdit.text.toString()
+
+            // Add invalidateAll() after setting the nickname so that the UI is refreshed with
+            // the value in the updated binding object.
+            invalidateAll()
 
             // change the visibility
             nicknameEdit.visibility = View.GONE
